@@ -5,6 +5,8 @@
     --accent-color: #00F2FE;
     --accent-gradient: linear-gradient(135deg, #00F2FE 0%, #4FACFE 100%);
     --tiktok-pink: #FE2C55;
+    --instagram-purple: #E1306C;
+    --kwai-orange: #FF5000;
     --text-primary: #F8FAFC;
     --text-secondary: #94A3B8;
     --border-color: rgba(255, 255, 255, 0.06);
@@ -99,7 +101,7 @@ body {
 .nav-socials {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 16px;
 }
 
 .nav-link {
@@ -107,9 +109,14 @@ body {
     text-decoration: none;
     font-weight: 600;
     transition: var(--transition);
+    font-size: 0.95rem;
 }
 
 .nav-link:hover {
+    color: var(--text-primary);
+}
+
+.highlight-link {
     color: var(--accent-color);
 }
 
@@ -167,13 +174,6 @@ body {
     margin-bottom: 44px;
 }
 
-/* NOVO ESTILO DA VITRINE */
-.vitrine-section {
-    padding: 80px 0;
-    border-top: 1px solid var(--border-color);
-    background: radial-gradient(circle at bottom, rgba(74, 172, 254, 0.03) 0%, transparent 70%);
-}
-
 .section-subtitle {
     text-align: center;
     color: var(--text-secondary);
@@ -183,6 +183,71 @@ body {
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+}
+
+/* ESTILOS DA SEÇÃO DAS REDES SOCIAIS */
+.social-networks {
+    padding: 60px 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.networks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.network-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    padding: 28px;
+    border-radius: 14px;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.network-card .net-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.network-card h4 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.network-card p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.net-action {
+    font-size: 0.85rem;
+    font-weight: 700;
+    transition: var(--transition);
+    margin-top: auto;
+}
+
+/* Hovers Temáticos de cada rede */
+.tiktok-net:hover { border-color: var(--tiktok-pink); background: rgba(254, 44, 85, 0.02); }
+.tiktok-net:hover .net-action { color: var(--tiktok-pink); }
+
+.insta-net:hover { border-color: var(--instagram-purple); background: rgba(225, 48, 108, 0.02); }
+.insta-net:hover .net-action { color: var(--instagram-purple); }
+
+.kwai-net:hover { border-color: var(--kwai-orange); background: rgba(255, 80, 0, 0.02); }
+.kwai-net:hover .net-action { color: var(--kwai-orange); }
+
+/* VITRINE */
+.vitrine-section {
+    padding: 80px 0;
+    border-top: 1px solid var(--border-color);
+    background: radial-gradient(circle at bottom, rgba(74, 172, 254, 0.03) 0%, transparent 70%);
 }
 
 .vitrine-links {
@@ -207,171 +272,41 @@ body {
     transition: var(--transition);
 }
 
-.vitrine-btn .v-icon {
-    font-size: 1.5rem;
-}
+.vitrine-btn .v-icon { font-size: 1.5rem; }
 
-/* Efeito Hover Personalizado de acordo com a marca */
 .tiktok-style { background: #11141A; }
 .tiktok-style:hover { border-color: var(--tiktok-pink); background: #161A22; transform: translateX(4px); }
-
 .shopee-style { background: #1A120B; }
 .shopee-style:hover { border-color: #EE4D2D; background: #261B10; transform: translateX(4px); }
-
 .meli-style { background: #1A1A0B; }
 .meli-style:hover { border-color: #FFF159; background: #262610; transform: translateX(4px); }
-
 .shein-style { background: #141414; }
 .shein-style:hover { border-color: #FFFFFF; background: #1F1F1F; transform: translateX(4px); }
 
-/* Métricas Gerais */
-.metrics {
-    padding: 80px 0;
-    border-top: 1px solid var(--border-color);
-}
-
-.metrics-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-}
-
-.metric-card {
-    background: var(--bg-surface);
-    border: 1px solid var(--border-color);
-    padding: 36px 24px;
-    border-radius: 12px;
-    text-align: center;
-    transition: var(--transition);
-}
-
-.metric-card:hover { border-color: rgba(0, 242, 254, 0.3); }
-
-.metric-card h3 {
-    font-size: 2.6rem;
-    font-weight: 800;
-    margin-bottom: 4px;
-}
-
-.metric-card p {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-}
-
-.metrics-subtext {
-    text-align: center;
-    margin-top: 32px;
-    color: var(--text-secondary);
-}
-
-/* Resultados Reais */
-.results {
-    padding: 80px 0;
-    border-top: 1px solid var(--border-color);
-}
-
-.results-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 24px;
-}
-
-.result-card {
-    background: var(--bg-card-glow);
-    border: 1px solid var(--border-color);
-    padding: 40px;
-    border-radius: 16px;
-}
-
-.video-badge {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    color: var(--tiktok-pink);
-    font-weight: 700;
-    display: block;
-    margin-bottom: 12px;
-}
-
-.result-card h4 { font-size: 2.8rem; font-weight: 800; margin-bottom: 16px; line-height: 1; }
-.result-card h4 span { font-size: 1.1rem; color: var(--text-secondary); display: block; }
-
-.video-stats {
-    display: flex;
-    gap: 20px;
-    border-top: 1px solid var(--border-color);
-    padding-top: 16px;
-    color: var(--text-secondary);
-}
-
-/* Público */
-.audience {
-    padding: 80px 0;
-    border-top: 1px solid var(--border-color);
-}
-
-.audience-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-}
-
-.audience-card {
-    background: var(--bg-surface);
-    border: 1px solid var(--border-color);
-    padding: 32px;
-    border-radius: 12px;
-}
-
-.audience-card h5 { color: var(--text-secondary); margin-bottom: 16px; }
-.audience-card .highlight { font-size: 1.8rem; font-weight: 700; }
-.audience-card .highlight span { font-size: 1rem; color: var(--accent-color); margin-left: 4px; }
-.audience-card .sub { font-size: 0.9rem; color: var(--text-secondary); }
-
-/* Serviços */
-.services {
-    padding: 80px 0;
-    border-top: 1px solid var(--border-color);
-}
-
-.services-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 48px;
-}
-
-.subsection-title {
-    font-size: 1.5rem;
-    margin-bottom: 24px;
-    border-left: 3px solid var(--accent-color);
-    padding-left: 12px;
-}
-
+/* SERVIÇOS */
+.services { padding: 80px 0; border-top: 1px solid var(--border-color); }
+.services-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 48px; }
+.subsection-title { font-size: 1.5rem; margin-bottom: 24px; border-left: 3px solid var(--accent-color); padding-left: 12px; }
 .custom-list { list-style: none; }
 .custom-list li { padding: 12px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.03); color: var(--text-secondary); }
 
-/* CTA & Footer */
-.cta {
-    padding: 100px 0;
-    border-top: 1px solid var(--border-color);
-    background: radial-gradient(circle at top, rgba(0, 242, 254, 0.05) 0%, transparent 65%);
-}
-
+/* CTA & FOOTER */
+.cta { padding: 100px 0; border-top: 1px solid var(--border-color); background: radial-gradient(circle at top, rgba(0, 242, 254, 0.05) 0%, transparent 65%); }
 .cta-container { text-align: center; max-width: 650px; }
 .cta h2 { font-size: 2.4rem; font-weight: 800; margin-bottom: 16px; }
 .cta p { color: var(--text-secondary); margin-bottom: 24px; }
 .contact-info { margin-bottom: 32px; font-weight: 600; }
 .contact-info p { margin-bottom: 8px; }
-
 footer { padding: 40px 0; border-top: 1px solid var(--border-color); font-size: 0.9rem; color: var(--text-secondary); }
 .footer-container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
-.footer-links a { color: var(--text-secondary); text-decoration: none; }
+.footer-links a { color: var(--text-secondary); text-decoration: none; margin-left: 12px; }
 .footer-links a:hover { color: var(--accent-color); }
 
 @media (max-width: 768px) {
     .hero h1 { font-size: 2.2rem; }
     .hero-actions { flex-direction: column; }
     .btn-primary, .btn-secondary { width: 100%; text-align: center; }
-    .results-grid { grid-template-columns: 1fr; }
     .footer-container { flex-direction: column; text-align: center; }
-    .vitrine-btn:hover { transform: none; } /* Desativa efeito lateral no mobile para focar no clique */
+    .vitrine-btn:hover { transform: none; }
+    .footer-links a { margin: 0 6px; }
 }
